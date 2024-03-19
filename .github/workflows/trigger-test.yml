@@ -1,0 +1,19 @@
+name: CI/CD Trigger test
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - ".github/workflows/timetofly-yml"
+            - "apps/timetofly/**/*"
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            - name: Run test
+              # Add more steps as needed
+              run: echo "Hello, World!"
