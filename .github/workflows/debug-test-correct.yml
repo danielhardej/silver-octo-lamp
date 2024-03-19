@@ -1,0 +1,17 @@
+name: Test Debug, Warning, and Error Tags
+
+on:
+    workflow_dispatch:
+
+jobs:
+  test-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate debug message
+        run: echo "::debug::This is a debug message"
+
+      - name: Generate warning
+        run: echo "::warning::This is a warning"
+
+      - name: Generate error
+        run: echo "::error::This is an error"
