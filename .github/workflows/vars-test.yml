@@ -1,0 +1,17 @@
+name: Check saved vars
+
+on:
+    workflow_dispatch:
+
+jobs:
+    test-secret:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check secret
+          run: |
+            if [[ -z "${{ secrets.MY_SECRET }}" ]]; then
+              echo "Secret is not set"
+              exit 1
+            else
+              echo "Secret is set"
+            fi
