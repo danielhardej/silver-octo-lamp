@@ -15,3 +15,6 @@ jobs:
 
       - name: Generate error
         run: echo "::error::This is an error"
+
+      - name: Display memory usage
+        run: free -h
